@@ -48,10 +48,21 @@ public class first {
             return a * power(a, n-1);
         }
     }
+    static String reverse(int n, int[] nums) {
+        if (n == 1) {
+            return Integer.toString(nums[0]);
+        }
+        else {
+            return Integer.toString(nums[n-1]) + " " + reverse(n-1, nums);
+        }
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
         int n = sc.nextInt();
-        System.out.println(power(a, n));
+        int[] nums = new int[n];
+        for (int i = 0; i < n; i++) {
+            nums[i] = sc.nextInt();
+        }
+        System.out.println(reverse(n, nums));
     }
 }
