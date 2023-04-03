@@ -10,6 +10,13 @@ public class first {
         }
         return min;
     }
+    static double avg(int n, int[] nums) {
+        double total = nums[0];
+        for (int i = 1; i < n; i++) {
+            total += nums[i];
+        }
+        return total / n;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -17,6 +24,6 @@ public class first {
         for (int i = 0; i < n; i++) {
             nums[i] = sc.nextInt();
         }
-        System.out.println(minNum(n, nums));
+        System.out.println(avg(n, nums));
     }
 }
