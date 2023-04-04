@@ -72,10 +72,18 @@ public class first {
             return findBinom(n-1, k-1) + findBinom(n-1, k);
         }
     }
+    static int findGCD(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        else {
+            return findGCD(b, a % b);
+        }
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int k = sc.nextInt();
-        System.out.println(findBinom(n,k));
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        System.out.println(findGCD(a, b));
     }
 }
