@@ -56,13 +56,17 @@ public class first {
             return Integer.toString(nums[n-1]) + " " + reverse(n-1, nums);
         }
     }
+    static boolean isAllDigit(String line) {
+        if (line.length() == 1) {
+            return Character.isDigit(line.charAt(0));
+        }
+        else {
+            return Character.isDigit(line.charAt(0)) && isAllDigit(line.substring(1));
+        }
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int[] nums = new int[n];
-        for (int i = 0; i < n; i++) {
-            nums[i] = sc.nextInt();
-        }
-        System.out.println(reverse(n, nums));
+        String line = sc.nextLine();
+        System.out.println(isAllDigit(line));
     }
 }
